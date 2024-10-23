@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Purwar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans';
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url('Asset/Background.png');
+            background-size: 100vw;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            width: 250px;
+            align-self: center;
+            border-radius: 20px;
+            border: 4px solid #f1f2f2;
+        }
+
+        .navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .navbar img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(6333%) hue-rotate(178deg) brightness(115%) contrast(90%);
+        }
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+
+        /* Icon styling */
+        .navbar i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        h1 {
+            font-size: 6rem;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: -0.01em;
+            margin:0px;
+            padding:0px;
+        }
+        h1::before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: #2a2626;
+            z-index: 1;
+            animation: wipe 3s forwards;
+        }
+        @keyframes wipe {
+            to {
+                left: 100%;
+            }
+        }
+        h3 {
+            color: white;
+            font-size: 0.75rem;
+        }
+        .red { color: #D62D20; }
+        .blue { color: #0E57E5; }
+        .yellow { color: #FEA510; }
+        .green { color: #008645; }
+        .space { color: #2a2626; }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 675px;
+            height: 44px;
+            border: 2px solid #777777;
+            border-radius: 24px;
+            padding: 5px 15px;
+        }
+        .search-bar h4{
+            color: #777777;
+        }
+        .icon-search1 {
+            width: 40px;
+            height: 40px;
+            padding-right: 10px;
+            color: #f1f2f2;
+        }
+        .icon-search2 {
+            width: 40px;
+            height: 40px;
+            padding-left: 20px;
+            color: #f1f2f2;
+        }
+        .shortcuts {
+            display: flex;
+            gap: 45px;
+            margin-top: 30px;
+        }
+        .shortcut {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .shortcut-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #777777;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .shortcut-icon img{
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(6333%) hue-rotate(178deg) brightness(115%) contrast(90%);
+        }
+        .icon path {
+          fill: #f1f2f2;
+        }
+        .noto-sans-regular {
+            font-family: "Noto Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+        .card1 {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #f1f2f2;
+            background-color: none; /*#2a2626*/
+            border-radius: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 550px;
+            left: 100px;
+            transform: rotate(-35deg);
+        }
+        .card2 {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #f1f2f2;
+            background-color: none; /*#2a2626*/
+            border-radius: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 550px;
+            left: 1280px;
+            transform: rotate(35deg);
+        }
+        .card3 {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #f1f2f2;
+            background-color: none; /*#2a2626*/
+            border-radius: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 100px;
+            left: 1280px;
+            transform: rotate(-35deg);
+        }
+        .card4 {
+            width: 150px;
+            height: 150px;
+            border: 4px solid #f1f2f2;
+            background-color: none; /*#2a2626*/
+            border-radius: 20px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            transform: rotate(35deg);
+        }
+        .card1 img {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(6333%) hue-rotate(178deg) brightness(115%) contrast(90%);
+        }
+        .card2 img {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(6333%) hue-rotate(178deg) brightness(115%) contrast(90%);
+        }
+        .card3 img {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(6333%) hue-rotate(178deg) brightness(115%) contrast(90%);
+        }
+        .card4 img {
+            width: 100px;
+            height: 100px;
+            margin-top: 10px;
+            filter: brightness(0) saturate(100%) invert(97%) sepia(2%) saturate(6333%) hue-rotate(178deg) brightness(115%) contrast(90%);
+        }
+        .box-green {
+            background-color: #008645;
+            width: 150px;
+            height: 30px;
+        }
+        .box-red {
+            background-color: #D62D20;
+            width: 150px;
+            height: 30px;
+        }
+        .box-yellow {
+            background-color: #FEA510;
+            width: 150px;
+            height: 30px;
+        }
+        .box-blue {
+            background-color: #0E57E5;
+            width: 150px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body class="noto-sans-regular">
+    <nav>
+        <ul class="navbar">
+            <li>
+                <a href="#home">
+                    <i class="home"></i> <img src="assets/home.png" alt=""> Home
+                </a>
+            </li>
+            <li>
+                <a href="#contacts">
+                    <i class="contact"></i> <img src="assets/apps.png" alt=""> Contacts
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>
+            <span class="yellow">H</span><span class="red">e</span><span class="green">l</span><span class="blue">l</span><span class="yellow">o</span><span class="red"> </span><span class="green">G</span><span class="blue">u</span><span class="yellow">y</span><span class="red">s</span><span class="green">!</span>
+        </h1>
+        <h3>Hope, you are doing well.</h3>
+        <div class="search-bar">
+            <img src="Asset/search.svg" alt="" class= "icon-search1">
+            <h4>
+                <span>   I am </span><span class="yellow">"A</span><span class="red">d</span><span class="green">i</span><span class="blue">t</span><span class="yellow">y</span><span class="red">a</span><span class="green"> </span><span class="blue">P</span><span class="yellow">u</span><span class="red">r</span><span class="green">w</span><span class="blue">a</span><span class="yellow">r"</span><span>. I am Data Analyst & Generative AI Enthusiast.</span>
+            </h4>
+            <img src="Asset/mic.svg" alt="" class= "icon-search2">
+        </div>
+        <div class="shortcuts">
+            <a href="#" class="shortcut">
+                <div class="shortcut-icon"> <img src="Asset/aboutme.svg" alt="" class= "icon"> </div>
+                <span>About Me</span>
+            </a>
+            <a href="#" class="shortcut">
+                <div class="shortcut-icon"> <img src="Asset/skills.svg" alt="" class= "icon"> </div>
+                <span>Skills</span>
+            </a>
+            <a href="#" class="shortcut">
+                <div class="shortcut-icon"> <img src="Asset/experience.svg" alt="" class= "icon"> </div>
+                <span>Experience</span>
+            </a>
+            <a href="#" class="shortcut">
+                <div class="shortcut-icon"> <img src="Asset/projects.svg" alt="" class= "icon"> </div>
+                <span>Projects</span>
+            </a>
+            <a href="#" class="shortcut">
+                <div class="shortcut-icon"> <img src="Asset/awards.svg" alt="" class= "icon"> </div>
+                <span>Awards</span>
+            </a>
+            <a href="#" class="shortcut">
+                <div class="shortcut-icon"> <img src="Asset/certification.svg" alt="" class= "icon"> </div>
+                <span>Certification</span>
+            </a>
+        </div>
+        <div class="card1">
+            <div class="box-green">
+            </div>
+            <img src="Asset/code.svg" alt="">
+        </div>
+        <div class="card2">
+            <div class="box-red">
+            </div>
+            <img src="Asset/analytics.svg" alt="">
+        </div>
+        <div class="card3">
+            <div class="box-yellow">
+            </div>
+            <img src="Asset/database.svg" alt="">
+        </div>
+        <div class="card4">
+            <div class="box-blue">
+            </div>
+            <img src="Asset/network.svg" alt="">
+        </div>
+    </main>
+</body>
+</html>
